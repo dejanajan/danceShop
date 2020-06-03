@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Model.Shop>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h4>Search per type:  @ViewBag.Name</h4><br />
+
+
+<table class="table mb-5">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.EquipmentType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerName)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.EquipmentType)
+                </td>
+
+            </tr>
+        }
+
+</table>
+
+<div class="back-link">
+    @Html.ActionLink("Back to shop", "../Shops/Index")
+</div>
+

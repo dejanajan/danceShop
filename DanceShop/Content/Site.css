@@ -1,0 +1,99 @@
+﻿
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.bg-dark {
+    background-color: #343a40;
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+    .navbar a {
+        color: #fff;
+    }
+
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: transparent;
+    color: #eee;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler {
+    border: none !important;
+} 
+
+.box {
+    padding: 20px 10px;
+}
+
+    .box img {
+        margin: 0 auto;
+        display: block;
+        width: 100px;
+    }
+
+    .box label {
+        margin: 0 auto;
+        display: block;
+        width: fit-content;
+    }
+
+    .box label a {
+        font-weight: 600;
+    }
+
+main {
+    min-height: 80vh;
+}
+
+.create-link a {
+    font-weight: 600;
+    color: #dc3545;
+}
+
+.back-link a {
+    font-weight: 600;
+}
+
+.form-group .control-label {
+    font-weight: 600;
+}
+
+footer p {
+    font-size: 12px;
+}
+
+@media(max-width: 992px) {
+    .navbar-header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+    }
+    .navbar-collapse {
+        display: flex;
+        justify-content: center;
+    }
+}

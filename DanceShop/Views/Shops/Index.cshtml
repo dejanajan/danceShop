@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Model.Shop>
+
+@{
+    ViewBag.Title = "Shops";
+}
+
+<h2>Shop</h2><br />
+<h5>Search By Price </h5>
+@using (Html.BeginForm())
+{
+    <table>
+        <tr><td>Min price:</td> <td> @Html.TextBox("minPrice") </td> </tr>
+        <tr><td>Max price:</td> <td> @Html.TextBox("maxPrice") </td><td><input type="submit" value="Search" id="leftSide" class="btn btn-secondary btn-sm" /></td></tr>
+    </table>
+}
+<hr />
+<h5>Search per equipment type</h5>
+<p>
+    @using (Html.BeginForm("Search", "Shops"))
+    {
+    <table>
+        <tr><td>Equipment Type:</td><td>@Html.TextBox("data")</td><td><input type="submit" value="Search" class=" btn btn-secondary btn-sm" /></td></tr>   
+    </table>
+    <hr /><br />
+    }
+</p>
+
+<p class="create-link">
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EquipmentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EquipmentID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EquipmentType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EquipmentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EquipmentID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EquipmentType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+</table>
